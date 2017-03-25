@@ -13,14 +13,25 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var display: UILabel!
     
-    var currentlyTyping = false
+    var displayValue: Double {
+        get {
+            return Double(display.text!)!
+        }
+        set {
+            display.text = String (newValue)
+        }
+    }
     
+    var currentlyTyping = false
+
     @IBAction func touchDigit(_ sender: UIButton) {
         let digit = sender.currentTitle!
         
         if currentlyTyping {
             let textCurrentlyInDisplay = display.text!
+            if !textCurrentlyInDisplay.contains(".") || digit != "."  {
             display.text = textCurrentlyInDisplay + digit
+            }
         } else {
             display.text = digit
             currentlyTyping = true
@@ -28,25 +39,22 @@ class ViewController: UIViewController {
         
         print("\(digit) was touched")
     }
-    var displayValue: Double {
-        get {
-          return Double(display.text!)!
-        }
-        set {
-            display.text = String (newValue)
-        }
-    }
+    
+    
+    private var engine: CalculatorBrain = CalculatorBrain()
     
     @IBAction func performOperation(_ sender: UIButton) {
-        currentlyTyping = false
+        
+        if currentlyTyping {
+            engine.setOperand(displayValue)
+            currentlyTyping = false
+        }
         if let mathSymbol = sender.currentTitle {
-            switch mathSymbol {
-            case "π":
-                displayValue = Double.pi
-            case "√":
-                displayValue = sqrt(displayValue)            default:
-                break
-            }        }
+           engine.performOperation(mathSymbol)
+        }
+        if let result = engine.result {
+            displayValue = result
+        }
         
     }
     

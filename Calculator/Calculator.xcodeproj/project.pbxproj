@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		660521E41E7F46270024011F /* CalculatorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660521E31E7F46270024011F /* CalculatorEngine.swift */; };
 		8901456B1E7873E200182238 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8901456A1E7873E200182238 /* AppDelegate.swift */; };
 		8901456D1E7873E200182238 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8901456C1E7873E200182238 /* ViewController.swift */; };
 		890145701E7873E200182238 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8901456E1E7873E200182238 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		660521E31E7F46270024011F /* CalculatorEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorEngine.swift; sourceTree = "<group>"; };
 		890145671E7873E200182238 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8901456A1E7873E200182238 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8901456C1E7873E200182238 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				890145981E78749F00182238 /* Supporting Files */,
 				8901456C1E7873E200182238 /* ViewController.swift */,
 				8901456E1E7873E200182238 /* Main.storyboard */,
+				660521E31E7F46270024011F /* CalculatorEngine.swift */,
 				890145711E7873E200182238 /* Assets.xcassets */,
 			);
 			path = Calculator;
@@ -272,6 +275,7 @@
 			files = (
 				8901456D1E7873E200182238 /* ViewController.swift in Sources */,
 				8901456B1E7873E200182238 /* AppDelegate.swift in Sources */,
+				660521E41E7F46270024011F /* CalculatorEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +526,7 @@
 				890145911E7873E300182238 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		890145921E7873E300182238 /* Build configuration list for PBXNativeTarget "CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +535,7 @@
 				890145941E7873E300182238 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		890145951E7873E300182238 /* Build configuration list for PBXNativeTarget "CalculatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +544,7 @@
 				890145971E7873E300182238 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
