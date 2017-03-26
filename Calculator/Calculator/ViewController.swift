@@ -6,12 +6,18 @@
 //  Copyright © 2017 McCormick & Bartram. All rights reserved.
 //
 
+
+//Controller - how it displays
+
 import UIKit
 
 class ViewController: UIViewController {
     
     
-    @IBOutlet weak var display: UILabel!
+    @IBOutlet weak var display: UILabel! //Outlet - wired up to UI Label
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     
     var displayValue: Double {
         get {
@@ -30,14 +36,15 @@ class ViewController: UIViewController {
         if currentlyTyping {
             let textCurrentlyInDisplay = display.text!
             if !textCurrentlyInDisplay.contains(".") || digit != "."  {
-            display.text = textCurrentlyInDisplay + digit
+                display.text = textCurrentlyInDisplay + digit
+                descriptionLabel.text = engine.description
             }
         } else {
             display.text = digit
             currentlyTyping = true
         }
         
-        print("\(digit) was touched")
+       // print("\(digit) was touched")
     }
     
     
@@ -47,6 +54,7 @@ class ViewController: UIViewController {
         
         if currentlyTyping {
             engine.setOperand(displayValue)
+            descriptionLabel.text = engine.description
             currentlyTyping = false
         }
         if let mathSymbol = sender.currentTitle {
