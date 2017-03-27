@@ -16,9 +16,14 @@ struct CalculatorBrain {
     
     private var accumulator: Double?
     private var pendingBinaryOperation: PendingBinaryOperation?
-    private var resultIsPending: Bool?
-    var description: String?
-    
+    private var resultIsPending: Bool = false
+    private var history = [String]()
+    var description: String {
+        get {
+            return history.joined()
+        }
+    }
+
     
     private enum Operation {
         case constant(Double)
@@ -43,15 +48,21 @@ struct CalculatorBrain {
             "x^2": Operation.unaryOperation({$0 * $0}), //def not the best way...
             "=": Operation.equals,
             "clr": Operation.clear
-        ]
+    ]
     
     mutating func performOperation(_ symbol: String) {
         if let operation = operations[symbol] {
-            if description != nil {
-                print("here")
-                description! += symbol
+            if accumulator != nil {
+                history.append(String(accumulator!))
+             }
+            history.append(symbol)
+            
+            if resultIsPending {
+                //history.append("...")
+            } else {
+              //  history.append("=")
             }
-
+            
             switch operation {
             case .constant(let value):
                 accumulator = value
@@ -62,42 +73,41 @@ struct CalculatorBrain {
             case .binaryOperation(let function):
                 if accumulator != nil {
                     pendingBinaryOperation = PendingBinaryOperation(function: function, firstOperand: accumulator!)
+                    //performPendingBinaryOperation()
+                   
                     accumulator = nil
                     resultIsPending = true
                 }
             case .equals:
-               resultIsPending = false
-               performPendingBinaryOperation()
-               
+                resultIsPending = false
+                performPendingBinaryOperation()
+                history.removeLast()
             case .clear:
                 accumulator = nil
+                history = [String]()
             }
-            
-            
-            
+
         }
     }
-
+    
     private mutating func performPendingBinaryOperation() {
-            if pendingBinaryOperation != nil && accumulator != nil {
+        if pendingBinaryOperation != nil && accumulator != nil {
             accumulator = pendingBinaryOperation!.perform(with: accumulator!)
             pendingBinaryOperation = nil
-            }
         }
-        
+    }
+    
     private struct PendingBinaryOperation {
-            let function: (Double,Double) -> Double
-            let firstOperand: Double
-            
-            func perform(with secondOperand: Double) -> Double {
-                return function(firstOperand, secondOperand)
-            }
+        let function: (Double,Double) -> Double
+        let firstOperand: Double
+        
+        func perform(with secondOperand: Double) -> Double {
+            return function(firstOperand, secondOperand)
         }
+    }
     mutating func setOperand(_ operand: Double) {
-        if description != nil {
-            print("here")
-            description! += String(operand)
-        }
+        
+       // history.append(String(operand))
         accumulator = operand
     }
     var result: Double? {
@@ -105,4 +115,14 @@ struct CalculatorBrain {
             return accumulator
         }
     }
+    struct historyStack {
+        var items = [String]()
+        mutating func push(_ item: String) {
+            items.append(item)
+        }
+        mutating func pop()  {
+            items.removeLast()
+        }
+    }
+    
 }

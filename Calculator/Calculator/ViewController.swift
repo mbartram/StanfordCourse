@@ -37,13 +37,13 @@ class ViewController: UIViewController {
             let textCurrentlyInDisplay = display.text!
             if !textCurrentlyInDisplay.contains(".") || digit != "."  {
                 display.text = textCurrentlyInDisplay + digit
-                descriptionLabel.text = engine.description
             }
         } else {
             display.text = digit
             currentlyTyping = true
         }
         
+        //descriptionLabel.text = engine.description
        // print("\(digit) was touched")
     }
     
@@ -54,7 +54,6 @@ class ViewController: UIViewController {
         
         if currentlyTyping {
             engine.setOperand(displayValue)
-            descriptionLabel.text = engine.description
             currentlyTyping = false
         }
         if let mathSymbol = sender.currentTitle {
@@ -63,7 +62,7 @@ class ViewController: UIViewController {
         if let result = engine.result {
             displayValue = result
         }
-        
+         descriptionLabel.text = engine.description
     }
     
 }
