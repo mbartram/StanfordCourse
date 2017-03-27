@@ -16,15 +16,12 @@ struct CalculatorBrain {
     
     private var accumulator: Double?
     private var pendingBinaryOperation: PendingBinaryOperation?
-    private var resultIsPending: Bool = false
     private var history = [String]()
     var description: String {
         get {
             return history.joined()
         }
     }
-
-    
     private enum Operation {
         case constant(Double)
         case unaryOperation((Double) -> Double)
@@ -47,7 +44,7 @@ struct CalculatorBrain {
             "+": Operation.binaryOperation({$0 + $1}),
             "x^2": Operation.unaryOperation({$0 * $0}), //def not the best way...
             "=": Operation.equals,
-            "clr": Operation.clear
+            "C": Operation.clear
     ]
     
     mutating func performOperation(_ symbol: String) {
@@ -56,12 +53,6 @@ struct CalculatorBrain {
                 history.append(String(accumulator!))
              }
             history.append(symbol)
-            
-            if resultIsPending {
-                //history.append("...")
-            } else {
-              //  history.append("=")
-            }
             
             switch operation {
             case .constant(let value):
@@ -73,15 +64,13 @@ struct CalculatorBrain {
             case .binaryOperation(let function):
                 if accumulator != nil {
                     pendingBinaryOperation = PendingBinaryOperation(function: function, firstOperand: accumulator!)
-                    //performPendingBinaryOperation()
-                   
                     accumulator = nil
-                    resultIsPending = true
                 }
+                performPendingBinaryOperation()
             case .equals:
-                resultIsPending = false
                 performPendingBinaryOperation()
                 history.removeLast()
+                history.append("-> ")
             case .clear:
                 accumulator = nil
                 history = [String]()
@@ -106,8 +95,6 @@ struct CalculatorBrain {
         }
     }
     mutating func setOperand(_ operand: Double) {
-        
-       // history.append(String(operand))
         accumulator = operand
     }
     var result: Double? {
