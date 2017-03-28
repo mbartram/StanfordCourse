@@ -82,7 +82,7 @@
                                                         <rect key="frame" x="288" y="0.0" width="86" height="96.666666666666671"/>
                                                         <color key="backgroundColor" red="0.88657611608505249" green="0.49799633833956702" blue="0.13419714077955611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
-                                                        <state key="normal" title="clr">
+                                                        <state key="normal" title="C">
                                                             <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>

@@ -42,9 +42,7 @@ class ViewController: UIViewController {
             display.text = digit
             currentlyTyping = true
         }
-        
-        //descriptionLabel.text = engine.description
-       // print("\(digit) was touched")
+    
     }
     
     
