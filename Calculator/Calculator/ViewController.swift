@@ -19,6 +19,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     
+    overide func viewDidLoad() {
+        super.viewDidLoad()
+        _ = Timer.scheduledTimer(timeInterval: <#T##TimeInterval#>, target: <#T##Any#>, selector: <#T##Selector#>, userInfo: <#T##Any?#>, repeats: <#T##Bool#>)
+    }
+    
+    private func changeColor() {
+        
+    }
     var displayValue: Double {
         get {
             return Double(display.text!)!

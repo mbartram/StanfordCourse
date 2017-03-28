@@ -352,6 +352,13 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="mr4-OY-hKm" id="Yk3-nq-H2a"/>
                         <outlet property="display" destination="3uU-I2-yNg" id="Ld9-OY-cEB"/>
+                        <outletCollection property="Buttons" destination="JkO-W4-XTF" collectionClass="NSMutableArray" id="mCw-kI-Ymd"/>
+                        <outletCollection property="buttons" destination="StL-GQ-Rcm" collectionClass="NSMutableArray" id="440-cr-aZQ"/>
+                        <outletCollection property="buttons" destination="SoO-Lc-BIV" collectionClass="NSMutableArray" id="uHr-pG-0aX"/>
+                        <outletCollection property="buttons" destination="ye4-B4-pRh" collectionClass="NSMutableArray" id="v3U-aY-wsN"/>
+                        <outletCollection property="buttons" destination="8mp-Vx-pIZ" collectionClass="NSMutableArray" id="DHT-mH-cdg"/>
+                        <outletCollection property="buttons" destination="Bh7-59-0lp" collectionClass="NSMutableArray" id="4bc-fm-0a7"/>
+                        <outletCollection property="buttons" destination="T5f-fs-2mn" collectionClass="NSMutableArray" id="cUB-hk-XMA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
