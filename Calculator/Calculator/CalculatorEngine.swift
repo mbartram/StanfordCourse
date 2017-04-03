@@ -49,10 +49,14 @@ struct CalculatorBrain {
     
     mutating func performOperation(_ symbol: String) {
         if let operation = operations[symbol] {
+            
+            if history.contains("Description") {
+                history.removeAll()
+            }
             if accumulator != nil {
                 history.append(String(accumulator!))
              }
-            history.append(symbol)
+                history.append(symbol)
             
             switch operation {
             case .constant(let value):
@@ -70,10 +74,11 @@ struct CalculatorBrain {
             case .equals:
                 performPendingBinaryOperation()
                 history.removeLast()
-                history.append("-> ")
+                history.append("=  ")
             case .clear:
-                accumulator = nil
-                history = [String]()
+                accumulator = 0
+                history.removeAll()
+                history.append("Description")
             }
 
         }
