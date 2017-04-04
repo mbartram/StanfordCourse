@@ -12,6 +12,11 @@
 //Model
 import Foundation
 
+private enum DescriptionTree<String> {
+    case empty
+    indirect case node(DescriptionTree,String,DescriptionTree)
+}
+
 struct CalculatorBrain {
     
     private var accumulator: Double?
@@ -106,14 +111,6 @@ struct CalculatorBrain {
             return accumulator
         }
     }
-    struct historyStack {
-        var items = [String]()
-        mutating func push(_ item: String) {
-            items.append(item)
-        }
-        mutating func pop()  {
-            items.removeLast()
-        }
-    }
     
 }
+
