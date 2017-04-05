@@ -17,9 +17,17 @@ struct CalculatorBrain {
     private var accumulator: Double?
     private var pendingBinaryOperation: PendingBinaryOperation?
     private var history = [String]()
+    var resultIsPending: Bool = false
     var description: String {
-        get {
-            return history.joined()
+        mutating get {
+            if resultIsPending {
+                history.append("...")
+                return history.joined()
+            } else {
+                print("adding = now")
+                print(history.joined())
+                return history.joined()
+            }
         }
     }
     private enum Operation {
@@ -50,42 +58,47 @@ struct CalculatorBrain {
     mutating func performOperation(_ symbol: String) {
         if let operation = operations[symbol] {
             
-            if history.contains("Description") {
-                history.removeAll()
+            if !history.isEmpty {
+                history.removeLast()
             }
             if accumulator != nil {
                 history.append(String(accumulator!))
-             }
-                history.append(symbol)
+            }
+           
             
             switch operation {
             case .constant(let value):
                 accumulator = value
+                 history.append(symbol)
             case .unaryOperation(let function):
+                history.insert(symbol + "(", at: 0)
+                history.append(")")
                 if accumulator != nil {
                     accumulator = function(accumulator!)
                 }
             case .binaryOperation(let function):
+                 history.append(symbol)
                 if accumulator != nil {
                     pendingBinaryOperation = PendingBinaryOperation(function: function, firstOperand: accumulator!)
+                    resultIsPending = true
                     accumulator = nil
                 }
                 performPendingBinaryOperation()
             case .equals:
                 performPendingBinaryOperation()
-                history.removeLast()
-                history.append("=  ")
+                
             case .clear:
                 accumulator = 0
                 history.removeAll()
                 history.append("Description")
             }
-
+            
         }
     }
     private mutating func performPendingBinaryOperation() {
         if pendingBinaryOperation != nil && accumulator != nil {
             accumulator = pendingBinaryOperation!.perform(with: accumulator!)
+            resultIsPending = false
             pendingBinaryOperation = nil
         }
     }
