@@ -12,30 +12,35 @@
 //Model
 import Foundation
 
-private enum DescriptionTree<String> {
-    case empty
-    indirect case node(DescriptionTree,String,DescriptionTree)
-}
-
 struct CalculatorBrain {
     
     private var accumulator: Double?
     private var pendingBinaryOperation: PendingBinaryOperation?
     private var history = [String]()
-    var resultIsPending: Bool = false
+    
+    var resultIsPending: Bool {
+        return pendingBinaryOperation != nil
+    }
     var description: String {
         mutating get {
             if resultIsPending {
                 history.append("...")
-                return history.joined()
+                return history.joined(separator: " ")
             } else {
                 if !history.contains("Description") && !history.contains("=") {
                     history.append("=")
                 }
-                return history.joined()
+                return history.joined(separator: " ")
             }
         }
     }
+    
+    var result: Double? {
+        get{
+            return accumulator
+        }
+    }
+    
     private enum Operation {
         case constant(Double)
         case unaryOperation((Double) -> Double)
@@ -62,12 +67,17 @@ struct CalculatorBrain {
             "C": Operation.clear
     ]
     
+    mutating func setOperand(_ operand: Double) {
+        if(accumulator != nil) {history.removeAll()}
+        if !history.isEmpty  {history.removeLast()}
+        accumulator = operand
+        history.append(String(operand))
+    }
+    
     mutating func performOperation(_ symbol: String) {
+        
         if let operation = operations[symbol] {
-            
-            if !history.isEmpty  {
-                history.removeLast()
-            }
+            if history.contains("=") || history.contains("...") || history.contains("Description") { history.removeLast() }
             switch operation {
                 
             case .constant(let value):
@@ -75,43 +85,33 @@ struct CalculatorBrain {
                 history.append(symbol)
                 
             case .unaryOperation(let function):
-                //determine where the below has to be inserted
-                history.insert(symbol + "(", at: 0)
+                var tempSymbol = symbol
+                if symbol == "±" {tempSymbol = "-"}
+                resultIsPending ?  history.insert(tempSymbol + "(", at: history.count - 1) :  history.insert(tempSymbol + "(", at: 0)
                 history.append(")")
-                if accumulator != nil {
-                    accumulator = function(accumulator!)
-                }
+                if let acc = accumulator { accumulator = function(acc)}
                 
             case .binaryOperation(let function):
-                if accumulator != nil {
-                    pendingBinaryOperation = PendingBinaryOperation(function: function, firstOperand: accumulator!)
-                    resultIsPending = true
-                    if history.isEmpty {
-                        history.append(String(accumulator!))
-                    }
+                if let acc = accumulator  {
+                    pendingBinaryOperation = PendingBinaryOperation(function: function, firstOperand: acc)
                     accumulator = nil
                 }
                 history.append(symbol)
                 performPendingBinaryOperation()
                 
             case .equals:
-                if accumulator != nil {
-                    history.append(String(accumulator!))
-                }
                 performPendingBinaryOperation()
                 
             case .clear:
                 accumulator = 0
                 history.removeAll()
                 history.append("Description")
-                resultIsPending = false
             }
         }
     }
     private mutating func performPendingBinaryOperation() {
         if pendingBinaryOperation != nil && accumulator != nil {
             accumulator = pendingBinaryOperation!.perform(with: accumulator!)
-            resultIsPending = false
             pendingBinaryOperation = nil
         }
     }
@@ -122,14 +122,6 @@ struct CalculatorBrain {
         
         func perform(with secondOperand: Double) -> Double {
             return function(firstOperand, secondOperand)
-        }
-    }
-    mutating func setOperand(_ operand: Double) {
-        accumulator = operand
-    }
-    var result: Double? {
-        get{
-            return accumulator
         }
     }
     
