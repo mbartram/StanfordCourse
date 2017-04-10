@@ -20,10 +20,6 @@ class ViewController: UIViewController {
     
     
   
-    
-    private func changeColor() {
-        
-    }
     var displayValue: Double {
         get {
             return Double(display.text!)!
@@ -65,7 +61,16 @@ class ViewController: UIViewController {
         if let result = engine.result {
             displayValue = result
         }
-         descriptionLabel.text = engine.description
+        var description = engine.description
+        if engine.resultIsPending {
+            description+=("...")
+           descriptionLabel.text = description
+        } else {
+            if description.contains("Description") && description.contains("=") {
+                description+=("=")
+            }
+           descriptionLabel.text = description        }
+
     }
     
 }

@@ -22,16 +22,8 @@ struct CalculatorBrain {
         return pendingBinaryOperation != nil
     }
     var description: String {
-        mutating get {
-            if resultIsPending {
-                history.append("...")
-                return history.joined(separator: " ")
-            } else {
-                if !history.contains("Description") && !history.contains("=") {
-                    history.append("=")
-                }
-                return history.joined(separator: " ")
-            }
+        get {
+            return history.joined(separator: " ")
         }
     }
     
@@ -69,11 +61,17 @@ struct CalculatorBrain {
     
     mutating func setOperand(_ operand: Double) {
         if(accumulator != nil) {history.removeAll()}
-        if !history.isEmpty  {history.removeLast()}
+        if history.contains("=") || history.contains("...") || history.contains("Description") { history.removeLast() }
         accumulator = operand
         history.append(String(operand))
     }
-    
+    func setOperand(variable name: String) {
+        
+    }
+    func evaluate(using variables: Dictionary<String, Double>? = nil) -> (result: Double?, isPending: Bool, description: String) {
+        
+        return (result, resultIsPending, description)
+    }
     mutating func performOperation(_ symbol: String) {
         
         if let operation = operations[symbol] {
@@ -86,7 +84,10 @@ struct CalculatorBrain {
                 
             case .unaryOperation(let function):
                 var tempSymbol = symbol
-                if symbol == "±" {tempSymbol = "-"}
+                if let acc = accumulator {
+                    accumulator = function(acc)
+                    if symbol == "±" && acc > 0 {tempSymbol = "-"}
+                }
                 resultIsPending ?  history.insert(tempSymbol + "(", at: history.count - 1) :  history.insert(tempSymbol + "(", at: 0)
                 history.append(")")
                 if let acc = accumulator { accumulator = function(acc)}
@@ -103,7 +104,7 @@ struct CalculatorBrain {
                 performPendingBinaryOperation()
                 
             case .clear:
-                accumulator = 0
+                accumulator = 0.0
                 history.removeAll()
                 history.append("Description")
             }
