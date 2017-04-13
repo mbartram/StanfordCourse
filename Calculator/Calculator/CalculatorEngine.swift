@@ -16,16 +16,16 @@ struct CalculatorBrain {
     
     private var accumulator: Double?
     private var pendingBinaryOperation: PendingBinaryOperation?
-    private var history = [String]()
+    // private var history = [String]()
     
     var resultIsPending: Bool {
         return pendingBinaryOperation != nil
     }
-    var description: String {
-        get {
-            return history.joined(separator: " ")
-        }
-    }
+    var description: String = " "
+    //        get {
+    //            return history.joined(separator: " ")
+    //        }
+    
     
     var result: Double? {
         get{
@@ -60,12 +60,12 @@ struct CalculatorBrain {
     ]
     
     mutating func setOperand(_ operand: Double) {
-        if(accumulator != nil) {history.removeAll()}
-        if history.contains("=") || history.contains("...") || history.contains("Description") { history.removeLast() }
+        if(accumulator != nil) {description = " "}
+        //if description.contains("=") || history.contains("...") || history.contains("Description") { history.removeLast() }
         accumulator = operand
-        history.append(String(operand))
+        description+=(String(operand))
     }
-    func setOperand(variable name: String) {
+    func setOperand(variable named: String) {
         
     }
     func evaluate(using variables: Dictionary<String, Double>? = nil) -> (result: Double?, isPending: Bool, description: String) {
@@ -75,29 +75,34 @@ struct CalculatorBrain {
     mutating func performOperation(_ symbol: String) {
         
         if let operation = operations[symbol] {
-            if history.contains("=") || history.contains("...") || history.contains("Description") { history.removeLast() }
+            //if history.contains("=") || history.contains("...") || history.contains("Description") { history.removeLast() }
             switch operation {
                 
             case .constant(let value):
                 accumulator = value
-                history.append(symbol)
+                description+=(symbol)
                 
             case .unaryOperation(let function):
-                var tempSymbol = symbol
+                //resultIsPending ?  history.insert(tempSymbol + "(", at: history.count - 1) :  history.insert(tempSymbol + "(", at: 0)
+                //resultIsPending ?  description.insert(tempString, at: description.count - 1) :  description.insert(tempString, at: 0)
                 if let acc = accumulator {
+                    var tempSymbol = symbol
+                    if tempSymbol == "±" && acc > 0 {tempSymbol = "-"}
+                    tempSymbol+="("
+                    
+                    resultIsPending ? description.replaceSubrange(<#T##bounds: Range<String.Index>##Range<String.Index>#>, with: tempSymbol + String(acc) ):description = tempSymbol + description
+                    description+=(")")
+                    
                     accumulator = function(acc)
-                    if symbol == "±" && acc > 0 {tempSymbol = "-"}
+                    
                 }
-                resultIsPending ?  history.insert(tempSymbol + "(", at: history.count - 1) :  history.insert(tempSymbol + "(", at: 0)
-                history.append(")")
-                if let acc = accumulator { accumulator = function(acc)}
                 
             case .binaryOperation(let function):
                 if let acc = accumulator  {
                     pendingBinaryOperation = PendingBinaryOperation(function: function, firstOperand: acc)
                     accumulator = nil
                 }
-                history.append(symbol)
+                description+=(symbol)
                 performPendingBinaryOperation()
                 
             case .equals:
@@ -105,8 +110,8 @@ struct CalculatorBrain {
                 
             case .clear:
                 accumulator = 0.0
-                history.removeAll()
-                history.append("Description")
+                description = "Description"
+                pendingBinaryOperation = nil
             }
         }
     }
