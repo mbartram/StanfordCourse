@@ -2,10 +2,10 @@
 
 import UIKit
 
-var str = "Hello, playground"
+var str = "75 + 93.5"
+var acc = "93.5"
+
+var newStr = "-" + String(acc)
+str = str.replacingCharacters(in: str.range(of: String(acc))!, with: newStr)
 
 
-let i = 27
-var f: (Double) -> Double
-f = changeSign(operand: Double)
-let x = f(81)

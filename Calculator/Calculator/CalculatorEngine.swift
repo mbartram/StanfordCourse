@@ -16,15 +16,11 @@ struct CalculatorBrain {
     
     private var accumulator: Double?
     private var pendingBinaryOperation: PendingBinaryOperation?
-    // private var history = [String]()
-    
     var resultIsPending: Bool {
         return pendingBinaryOperation != nil
     }
     var description: String = " "
-    //        get {
-    //            return history.joined(separator: " ")
-    //        }
+    
     
     
     var result: Double? {
@@ -77,22 +73,22 @@ struct CalculatorBrain {
         if let operation = operations[symbol] {
             //if history.contains("=") || history.contains("...") || history.contains("Description") { history.removeLast() }
             switch operation {
-                
             case .constant(let value):
                 accumulator = value
                 description+=(symbol)
                 
             case .unaryOperation(let function):
-                //resultIsPending ?  history.insert(tempSymbol + "(", at: history.count - 1) :  history.insert(tempSymbol + "(", at: 0)
-                //resultIsPending ?  description.insert(tempString, at: description.count - 1) :  description.insert(tempString, at: 0)
                 if let acc = accumulator {
                     var tempSymbol = symbol
                     if tempSymbol == "±" && acc > 0 {tempSymbol = "-"}
                     tempSymbol+="("
-                    
-                    resultIsPending ? description.replaceSubrange(<#T##bounds: Range<String.Index>##Range<String.Index>#>, with: tempSymbol + String(acc) ):description = tempSymbol + description
+                    if resultIsPending {
+                        let range = description.range(of: String(acc))!
+                            description = description.replacingCharacters(in: range, with: tempSymbol + String(acc))
+                    } else {
+                        description = tempSymbol + description
+                    }
                     description+=(")")
-                    
                     accumulator = function(acc)
                     
                 }
