@@ -33,60 +33,36 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mr4-OY-hKm">
-                                        <rect key="frame" x="0.0" y="41" width="374" height="21"/>
+                                        <rect key="frame" x="0.0" y="41" width="374" height="20.333333333333329"/>
                                         <color key="backgroundColor" red="0.50731026785714284" green="0.20789805147300733" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="k7U-FH-WcR">
-                                        <rect key="frame" x="0.0" y="67" width="374" height="639"/>
+                                        <rect key="frame" x="0.0" y="66.333333333333314" width="374" height="639.66666666666674"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tw5-Q9-TsR">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="102"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="87.000000000000014"/>
                                                 <subviews>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqQ-cw-6Tr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="102"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="87.000000000000014"/>
                                                         <color key="backgroundColor" red="0.19825243077107838" green="0.73529575892857146" blue="0.47472098214285713" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <state key="normal" title="sin">
+                                                        <state key="normal" title="M">
                                                             <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gxv-qg-Uo0"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StL-GQ-Rcm">
-                                                        <rect key="frame" x="95" y="0.0" width="90" height="102"/>
-                                                        <color key="backgroundColor" red="0.19825243077107838" green="0.73529575892857146" blue="0.47472098214285713" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
-                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <state key="normal" title="tan">
-                                                            <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gVx-C9-cib"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZg-Er-Db3">
-                                                        <rect key="frame" x="190" y="0.0" width="89" height="102"/>
-                                                        <color key="backgroundColor" red="0.19825243077107838" green="0.73529575892857146" blue="0.47472098214285713" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
-                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <state key="normal" title="x^2">
-                                                            <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CS8-f1-5AJ"/>
-                                                        </connections>
-                                                    </button>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JkO-W4-XTF">
-                                                        <rect key="frame" x="284" y="0.0" width="90" height="102"/>
+                                                        <rect key="frame" x="189.66666666666663" y="0.0" width="184.33333333333337" height="87.000000000000014"/>
                                                         <color key="backgroundColor" red="0.19825243077107838" green="0.73529575892857146" blue="0.47472098214285713" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <state key="normal" title="C">
+                                                        <state key="normal" title="→M">
                                                             <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
@@ -95,11 +71,64 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qvh-Vx-Zhc">
+                                                <rect key="frame" x="0.0" y="92.000000000000014" width="374" height="87.333333333333357"/>
+                                                <subviews>
+                                                    <button opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fr6-A3-MRG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="87.333333333333343"/>
+                                                        <color key="backgroundColor" red="0.19825243079999999" green="0.73529575889999998" blue="0.47472098210000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
+                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal" title="sin">
+                                                            <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jnx-Kr-ntg"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42U-3V-Iwm">
+                                                        <rect key="frame" x="94.666666666666657" y="0.0" width="89.999999999999972" height="87.333333333333343"/>
+                                                        <color key="backgroundColor" red="0.19825243079999999" green="0.73529575889999998" blue="0.47472098210000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
+                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal" title="tan">
+                                                            <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E0O-yP-bRW"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oth-dv-1By">
+                                                        <rect key="frame" x="189.66666666666669" y="0.0" width="89.666666666666686" height="87.333333333333343"/>
+                                                        <color key="backgroundColor" red="0.19825243079999999" green="0.73529575889999998" blue="0.47472098210000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
+                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal" title="x^2">
+                                                            <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lBm-GX-O73"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ay9-sA-A2x">
+                                                        <rect key="frame" x="284.33333333333326" y="0.0" width="89.666666666666686" height="87.333333333333343"/>
+                                                        <color key="backgroundColor" red="0.19825243079999999" green="0.73529575889999998" blue="0.47472098210000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
+                                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal" title="C">
+                                                            <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sTg-om-35d"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4az-4q-H3D">
-                                                <rect key="frame" x="0.0" y="107" width="374" height="103"/>
+                                                <rect key="frame" x="0.0" y="184.33333333333337" width="374" height="87"/>
                                                 <subviews>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xng-0R-Iur">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="103"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="87"/>
                                                         <color key="backgroundColor" red="0.19825243079999999" green="0.73529575889999998" blue="0.47472098210000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -111,7 +140,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ye4-B4-pRh">
-                                                        <rect key="frame" x="95" y="0.0" width="90" height="103"/>
+                                                        <rect key="frame" x="94.666666666666657" y="0.0" width="89.999999999999972" height="87"/>
                                                         <color key="backgroundColor" red="0.19825243079999999" green="0.73529575889999998" blue="0.47472098210000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -123,7 +152,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5f-fs-2mn">
-                                                        <rect key="frame" x="190" y="0.0" width="89" height="103"/>
+                                                        <rect key="frame" x="189.66666666666669" y="0.0" width="89.666666666666686" height="87"/>
                                                         <color key="backgroundColor" red="0.19825243079999999" green="0.73529575889999998" blue="0.47472098210000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -135,7 +164,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SoO-Lc-BIV">
-                                                        <rect key="frame" x="284" y="0.0" width="90" height="103"/>
+                                                        <rect key="frame" x="284.33333333333326" y="0.0" width="89.666666666666686" height="87"/>
                                                         <color key="backgroundColor" red="0.19825243079999999" green="0.73529575889999998" blue="0.47472098210000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -149,10 +178,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="c21-GS-QC3">
-                                                <rect key="frame" x="0.0" y="215" width="374" height="102"/>
+                                                <rect key="frame" x="0.0" y="276.33333333333337" width="374" height="87"/>
                                                 <subviews>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzt-e1-u7o">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="102"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="87"/>
                                                         <color key="backgroundColor" red="0.19825243079999999" green="0.73529575889999998" blue="0.47472098210000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -164,7 +193,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCW-hO-URR">
-                                                        <rect key="frame" x="95" y="0.0" width="90" height="102"/>
+                                                        <rect key="frame" x="94.666666666666657" y="0.0" width="89.999999999999972" height="87"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <state key="normal" title="7">
@@ -175,7 +204,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mp-Vx-pIZ">
-                                                        <rect key="frame" x="190" y="0.0" width="89" height="102"/>
+                                                        <rect key="frame" x="189.66666666666669" y="0.0" width="89.666666666666686" height="87"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <state key="normal" title="8">
@@ -186,7 +215,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bh7-59-0lp">
-                                                        <rect key="frame" x="284" y="0.0" width="90" height="102"/>
+                                                        <rect key="frame" x="284.33333333333326" y="0.0" width="89.666666666666686" height="87"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <state key="normal" title="9">
@@ -199,10 +228,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4HY-EK-UYx">
-                                                <rect key="frame" x="0.0" y="322" width="374" height="102"/>
+                                                <rect key="frame" x="0.0" y="368.33333333333337" width="374" height="86.999999999999943"/>
                                                 <subviews>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZ6-w0-AV1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="102"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="86.999999999999943"/>
                                                         <color key="backgroundColor" red="0.19825243079999999" green="0.73529575889999998" blue="0.47472098210000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -214,7 +243,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aB-0w-scY">
-                                                        <rect key="frame" x="95" y="0.0" width="90" height="102"/>
+                                                        <rect key="frame" x="94.666666666666657" y="0.0" width="89.999999999999972" height="86.999999999999943"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <state key="normal" title="4">
@@ -225,7 +254,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZJ-Ga-Scc">
-                                                        <rect key="frame" x="190" y="0.0" width="89" height="102"/>
+                                                        <rect key="frame" x="189.66666666666669" y="0.0" width="89.666666666666686" height="86.999999999999943"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <state key="normal" title="5">
@@ -236,7 +265,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNW-xN-Hnq">
-                                                        <rect key="frame" x="284" y="0.0" width="90" height="102"/>
+                                                        <rect key="frame" x="284.33333333333326" y="0.0" width="89.666666666666686" height="86.999999999999943"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <state key="normal" title="6">
@@ -249,10 +278,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3ch-to-NkP">
-                                                <rect key="frame" x="0.0" y="429" width="374" height="103"/>
+                                                <rect key="frame" x="0.0" y="460.33333333333331" width="374" height="87.333333333333428"/>
                                                 <subviews>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94e-FV-ak0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="103"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="87.333333333333371"/>
                                                         <color key="backgroundColor" red="0.19825243079999999" green="0.73529575889999998" blue="0.47472098210000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -264,7 +293,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1k-DP-xbg">
-                                                        <rect key="frame" x="95" y="0.0" width="90" height="103"/>
+                                                        <rect key="frame" x="94.666666666666657" y="0.0" width="89.999999999999972" height="87.333333333333371"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <state key="normal" title="1">
@@ -275,7 +304,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tnv-ls-Cva">
-                                                        <rect key="frame" x="190" y="0.0" width="89" height="103"/>
+                                                        <rect key="frame" x="189.66666666666669" y="0.0" width="89.666666666666686" height="87.333333333333371"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <state key="normal" title="2">
@@ -286,7 +315,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54l-2i-gC2">
-                                                        <rect key="frame" x="284" y="0.0" width="90" height="103"/>
+                                                        <rect key="frame" x="284.33333333333326" y="0.0" width="89.666666666666686" height="87.333333333333371"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <state key="normal" title="3">
@@ -299,10 +328,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KI8-Jn-co0">
-                                                <rect key="frame" x="0.0" y="537" width="374" height="102"/>
+                                                <rect key="frame" x="0.0" y="552.66666666666663" width="374" height="87"/>
                                                 <subviews>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8L-be-a2d">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="102"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="87"/>
                                                         <color key="backgroundColor" red="0.19825243079999999" green="0.73529575889999998" blue="0.47472098210000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -314,7 +343,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBr-Ef-ylP">
-                                                        <rect key="frame" x="95" y="0.0" width="90" height="102"/>
+                                                        <rect key="frame" x="94.666666666666657" y="0.0" width="89.999999999999972" height="87"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <state key="normal" title=".">
@@ -325,7 +354,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3m-gT-OTm">
-                                                        <rect key="frame" x="190" y="0.0" width="89" height="102"/>
+                                                        <rect key="frame" x="189.66666666666669" y="0.0" width="89.666666666666686" height="87"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <state key="normal" title="0">
@@ -336,7 +365,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9C-c0-IR3">
-                                                        <rect key="frame" x="284" y="0.0" width="90" height="102"/>
+                                                        <rect key="frame" x="284.33333333333326" y="0.0" width="89.666666666666686" height="87"/>
                                                         <color key="backgroundColor" red="0.92636718750000002" green="0.56386452913284302" blue="0.56386452913284302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="32"/>
                                                         <state key="normal" title="=">

@@ -16,12 +16,18 @@ struct CalculatorBrain {
     
     private var accumulator: Double?
     private var pendingBinaryOperation: PendingBinaryOperation?
+    private var variables = [String:Double]()
+    
     var resultIsPending: Bool {
         return pendingBinaryOperation != nil
     }
-    var description: String = " "
+    private var descriptionInternal: String = " "
     
-    
+    var description: String {
+        get {
+            return descriptionInternal
+        }
+    }
     
     var result: Double? {
         get{
@@ -56,17 +62,17 @@ struct CalculatorBrain {
     ]
     
     mutating func setOperand(_ operand: Double) {
-        if(accumulator != nil) {description = " "}
+        if(accumulator != nil) {descriptionInternal = " "}
         //if description.contains("=") || history.contains("...") || history.contains("Description") { history.removeLast() }
         accumulator = operand
-        description+=(String(operand))
+        descriptionInternal+=(String(operand))
     }
     func setOperand(variable named: String) {
-        
+      // descriptionInternal += named
     }
     func evaluate(using variables: Dictionary<String, Double>? = nil) -> (result: Double?, isPending: Bool, description: String) {
         
-        return (result, resultIsPending, description)
+        return (result, resultIsPending, descriptionInternal)
     }
     mutating func performOperation(_ symbol: String) {
         
@@ -75,7 +81,7 @@ struct CalculatorBrain {
             switch operation {
             case .constant(let value):
                 accumulator = value
-                description+=(symbol)
+                descriptionInternal+=(symbol)
                 
             case .unaryOperation(let function):
                 if let acc = accumulator {
@@ -83,12 +89,12 @@ struct CalculatorBrain {
                     if tempSymbol == "±" && acc > 0 {tempSymbol = "-"}
                     tempSymbol+="("
                     if resultIsPending {
-                        let range = description.range(of: String(acc))!
-                            description = description.replacingCharacters(in: range, with: tempSymbol + String(acc))
+                        let range = descriptionInternal.range(of: String(acc))!
+                            descriptionInternal = descriptionInternal.replacingCharacters(in: range, with: tempSymbol + String(acc))
                     } else {
-                        description = tempSymbol + description
+                        descriptionInternal = tempSymbol + descriptionInternal
                     }
-                    description+=(")")
+                    descriptionInternal+=(")")
                     accumulator = function(acc)
                     
                 }
@@ -98,7 +104,7 @@ struct CalculatorBrain {
                     pendingBinaryOperation = PendingBinaryOperation(function: function, firstOperand: acc)
                     accumulator = nil
                 }
-                description+=(symbol)
+                descriptionInternal+=(symbol)
                 performPendingBinaryOperation()
                 
             case .equals:
@@ -106,7 +112,7 @@ struct CalculatorBrain {
                 
             case .clear:
                 accumulator = 0.0
-                description = "Description"
+                descriptionInternal = "Description"
                 pendingBinaryOperation = nil
             }
         }
